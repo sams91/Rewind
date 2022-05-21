@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A coding project by JA</title>
+    <title>Rewind: A coding project by JA</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,7 +24,7 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="#"><img src="/img/ja.jpg" alt="J A" class="d-inline-block align-text-center"
-            width="55" height="40"> App Name</a>
+            width="55" height="40"> Rewind</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -41,10 +41,10 @@
                     <a class="nav-link active" aria-current="page" href="code.html">The Code</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" target="_blank" href="#">Git Repo</a>
+                    <a class="nav-link" target="_blank" href="https://github.com/sams91/Rewind">Git Repo</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" target="_blank" href="#">About</a>
+                    <a class="nav-link"  href="about.html">About</a>
                 </li>
 
             </ul>
@@ -54,21 +54,67 @@
 <!-- main section  -->
 <main class="flex-shrink-0">
     <div class="container py-5 px-5 mt-5">
-        <h2 class="border-1 border-bottom border-dark">The Code for App Name</h2>
+        <h2 class="border-1 border-bottom border-dark">The Code for Rewind</h2>
         <div class="row row-cols-1 row-cols-lg-2">
             <div class="col-lg-8">
                 <pre class="line-numbers"><code class="language-javascript">
-                    // call hello world
-                    function helloWorld(){
-                    alert("hello World");
-                    }
+                    //get the string from the page
+//controller function
+function getValue() {
+
+    document.getElementById("alert").classList.add("invisible")
+   let userString = document.getElementById("userString").value;
+
+   let revString = reverseString(userString);
+
+   displayString(revString);
+}
+
+//reverse the string
+//logic function
+function reverseString(userString) {
+
+    let revString = [];
+
+
+    // reverse a string using a for loop
+    //AKA "decrementing for loop". 
+    //This starts at the end of the array and goes backwards to 
+    //zero rather than starting at zero and going forward.
+    for (let index = userString.length - 1; index >= 0; index--) {
+        revString += userString[index];
+        
+    }
+
+    return revString;
+
+}
+
+//display the reversed string to the user
+//view function
+function displayString(revString) {
+
+
+
+    //write to the page
+    document.getElementById("message").innerHTML = `Your String Reversed Is: ${revString}`;
+    //show the alert box
+    document.getElementById("alert").classList.remove("invisible");
+
+}
                 </code>
                 </pre>
             </div>
             <div class="col-lg-4">
-                <p>The code is structured in one function</p>
-                <h5>Hello World</h5>
-                <p>Hello World is a function that displays an alert with a message of "Hello World"</p>
+                <p>Rewind is an app that will display the reverse of any string the user types.</p>
+                <p>There are multiple ways to reverse a string. 
+                    The method used by this app is known as the "decrementing for loop".</p>
+                <p>The code is structured in three functions.</p>
+                <p>The first function receives input from the user. 
+                    The second function reverses that input. 
+                    The third function displays the result.</p>
+                
+                
             </div>
         </div>
     </div>
